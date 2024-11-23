@@ -1,6 +1,7 @@
 FROM archlinux:latest
 
 RUN yes | pacman -Syu \
+        ctags \
         curl \
         gcc \
         git \
@@ -10,6 +11,7 @@ RUN yes | pacman -Syu \
         python \
         python-pip \
         python-poetry \
+        ripgrep \
         rxvt-unicode-terminfo \
         sudo \
         vim \
