@@ -29,6 +29,6 @@ RUN mkdir /home/ena/.ssh \
     && curl https://github.com/macrat.keys -o /home/ena/.ssh/authorized_keys \
     && git clone --depth=1 --recursive https://github.com/macrat/.dotfiles.git /home/ena/.dotfiles \
     && cd /home/ena/.dotfiles \
-    && ./deploy.sh
+    && ./setup.sh
 
 CMD ["/usr/bin/sudo", "/usr/bin/start-devenv"]
