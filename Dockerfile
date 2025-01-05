@@ -7,6 +7,7 @@ RUN yes | pacman -Syu \
         git \
         go \
         make \
+        neovim \
         openssh \
         python \
         python-pip \
@@ -14,10 +15,11 @@ RUN yes | pacman -Syu \
         ripgrep \
         rxvt-unicode-terminfo \
         sudo \
-        vim \
         zsh \
         zsh-completions \
     && useradd -m -G wheel -s /bin/zsh ena \
+	&& ln -s /usr/bin/nvim /usr/bin/vim \
+	&& ln -s /usr/bin/nvim /usr/bin/vi \
     && echo -e '\n%wheel ALL=(ALL) NOPASSWD: ALL' >> /etc/sudoers
 
 COPY ./start.sh /usr/bin/start-devenv
