@@ -22,7 +22,7 @@ RUN yes | pacman -Syu \
 	&& ln -s /usr/bin/nvim /usr/bin/vi \
     && echo -e '\n%wheel ALL=(ALL) NOPASSWD: ALL' >> /etc/sudoers
 
-COPY ./start.sh /usr/bin/start-devenv
+COPY ./start-sshd /usr/bin/start-sshd
 
 USER ena
 ENV LANG=en_US.UTF-8
@@ -35,4 +35,4 @@ RUN mkdir /home/ena/.ssh \
     && cd /home/ena/.dotfiles \
     && ./setup.sh
 
-CMD ["/usr/bin/sudo", "/usr/bin/start-devenv"]
+CMD ["/usr/bin/zsh"]
