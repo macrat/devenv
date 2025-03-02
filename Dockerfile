@@ -12,9 +12,11 @@ RUN yes | pacman -Syu \
         python \
         python-pip \
         python-poetry \
+        python-uv \
         ripgrep \
         rxvt-unicode-terminfo \
         sudo \
+        tree-sitter \
         zsh \
         zsh-completions \
     && useradd -m -G wheel -s /bin/zsh ena \
